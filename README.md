@@ -1,4 +1,4 @@
-# qa_guru_mobileTests10
+# qa_guru_HW_mobileTests10
 Мобильная автоматизация #1. Разрабатываем автотесты с Browserstack
 
 Task 
