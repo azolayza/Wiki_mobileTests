@@ -13,7 +13,9 @@ import java.net.URL;
 
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
-    public static BrowserstackConfig browserstack = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
+    public static BrowserstackConfig browserstack =
+            ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
+
     public static URL getBrowserstackUrl() {
         try {
             return new URL("http://hub.browserstack.com/wd/hub");
