@@ -18,7 +18,7 @@ import java.net.URL;
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 @ParametersAreNonnullByDefault
-public class LocalMobileDriver implements WebDriverProvider {
+public class EmulatorDriver implements WebDriverProvider {
     @Override
     @CheckReturnValue
     @Nonnull
