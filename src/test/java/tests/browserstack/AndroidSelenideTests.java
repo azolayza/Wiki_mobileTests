@@ -1,8 +1,9 @@
-package tests;
+package tests.browserstack;
 
 import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import tests.browserstack.TestBase;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Selectors.byClassName;
