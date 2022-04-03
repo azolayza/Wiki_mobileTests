@@ -4,6 +4,13 @@ import config.Credentials;
 import static io.restassured.RestAssured.given;
 
 public class Browserstack {
+
+    // DO NOT STORE CREDENTIALS, ONLY FOR EXAMPLE
+    // todo hide with Owner
+    public static String
+            browserstackLogin = "tpuretest_lSVWc2",
+            browserstackPassword = "Ggd5nW19cyeGseGGn2m6";
+
     public static String videoUrl(String sessionId) {
         return given()
                 .auth().basic(Credentials.config.user(), Credentials.config.key())
