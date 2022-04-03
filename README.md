@@ -1,5 +1,5 @@
 # qa_guru_HW_mobileTests10
-Мобильная автоматизация #1. Разрабатываем автотесты с Browserstack
+Мобильная автоматизация. Разрабатываем автотесты с Browserstack  и под Эмулятор ( Appium server, Appium Inspector And Android Emulator)
 
 Task 
 - Зарегистрировать аккаунт в browserstack
@@ -8,4 +8,5 @@ Task
 - Обновить под него автотест с занятия
 - Добавить аллюровские степы
 - Вынести данные (логин, пароль, урл браузерстека и т.д.) в .properties с owner
+- Установить android studio https://developer.android.com/studio и appium desktop https://github.com/appium/appium-desktop
 - Разработать автотест на getting started в приложении википедии - пройти по 4м экранам, на каждом сделать проверку
