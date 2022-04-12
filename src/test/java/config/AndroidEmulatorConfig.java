@@ -2,8 +2,8 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({"classpath:src/test/resources/config/androidEmulator.properties"})
-public interface AndroidEmulatorConfig extends Config{
+@Config.Sources({"classpath:config/androidEmulator.properties"})
+public interface AndroidEmulatorConfig extends Config {
 
     @Key("hubUrl")
     String hubUrl();

@@ -1,8 +1,7 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.BrowserstackConfig;
-import org.aeonbits.owner.ConfigFactory;
+import config.BrowserstackCredentials;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
@@ -13,8 +12,6 @@ import java.net.URL;
 
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
-    public static BrowserstackConfig browserstack =
-            ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
 
     public static URL getBrowserstackUrl() {
         try {
@@ -29,14 +26,14 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         MutableCapabilities mutableCapabilities = new MutableCapabilities();
         mutableCapabilities.merge(capabilities);
         mutableCapabilities.setCapability("browserstack.appium_version", "1.22.0");
-        mutableCapabilities.setCapability("browserstack.user", browserstack.user());
-        mutableCapabilities.setCapability("browserstack.key", browserstack.key());
-        mutableCapabilities.setCapability("app", browserstack.app());
+        mutableCapabilities.setCapability("browserstack.user", BrowserstackCredentials.config.user());
+        mutableCapabilities.setCapability("browserstack.key", BrowserstackCredentials.config.key());
+        mutableCapabilities.setCapability("app", BrowserstackCredentials.config.app());
         mutableCapabilities.setCapability("device", "Google Pixel 3");
         mutableCapabilities.setCapability("os_version", "9.0");
-        mutableCapabilities.setCapability("project", "First Java Project");
-        mutableCapabilities.setCapability("build", "browserstack-build-1");
-        mutableCapabilities.setCapability("name", "first_test");
+        mutableCapabilities.setCapability("project", "Wiki Test Project");
+        mutableCapabilities.setCapability("build", "browserstack-build-wiki");
+        mutableCapabilities.setCapability("name", "wiki_test");
 
         return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
     }
