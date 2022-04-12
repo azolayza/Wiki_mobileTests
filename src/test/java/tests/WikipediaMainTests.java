@@ -2,22 +2,35 @@ package tests;
 
 import com.codeborne.selenide.Condition;
 import io.appium.java_client.AppiumBy;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
+@Owner("azovtsevae")
+@Feature("Mobile smoke tests")
+@DisplayName("Проверка Wikipedia")
 @Tag("selenide")
 public class WikipediaMainTests extends TestBase {
+
     @Test
+    @DisplayName("Поиск статьи по запросу Appium")
+    @Tags({@Tag("api"), @Tag("bonseller")})
+    @Severity(SeverityLevel.NORMAL)
     void wikiSearchSkipOnBoardingTest() {
         step("Skip onboarding page", () -> back());
         step("Type search", () -> {
             $(AppiumBy.accessibilityId("Search Wikipedia")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text"))
-                    .setValue("BrowserStack");
+                    .setValue("Appium");
         });
         step("Verify content found", () ->
                 $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
@@ -25,6 +38,9 @@ public class WikipediaMainTests extends TestBase {
     }
 
     @Test
+    @DisplayName("Проверка страниц Onboarding при запуске приложения")
+    @Tags({@Tag("api"), @Tag("bonseller")})
+    @Severity(SeverityLevel.NORMAL)
     void wikiOnBoardingStepsTest() {
         step("First onboarding page", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
